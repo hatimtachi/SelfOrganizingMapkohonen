@@ -1,9 +1,0 @@
-language: c
-sudo: false # only for faster builds
-script:
-  - clang -coverage -O0 readFile.c dataProcess.c neuralNetworkProcess.c stack.c main.c structure.h  -o pmc
-  - ./pmc
-  - gcov readFile.c dataProcess.c neuralNetworkProcess.c stack.c main.c structure.h
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
